@@ -1,33 +1,31 @@
 # Odor space analysis, synthetic ORN dataset, and odor classification
 
-This repository contains scripts and data to reproduce Figures 4,5,6 in ``Synthetic Biology Meets Neuromorphic Computing: Towards a Bio-Inspired Olfactory Perception System'' by Max, Sames, Ye, Steinkühler, and Corradi (2025).
-
+This repository contains scripts and data to reproduce Figures 4,5,6 in _Synthetic Biology Meets Neuromorphic Computing: Towards a Bio-Inspired Olfactory Perception System_ by Max, Sames, Ye, Steinkühler, and Corradi (2025).
 
 ## Installation
 
-Clone all contents of this folder, cd into it.
-
-Make new python environment and activate:
+Clone all contents of this folder, cd into it, make new python environment and activate:
 ```
+git clone github.com/kma-code/SYNCH_perspective
+cd SYNCH_perspective
 python3 -m venv SYNCHenv
 source SYNCHenv/bin/activate
 pip3 install -r requirements.txt
 python -m ipykernel install --user --name=SYNCHenv 
 ```
 
+## What this repository does
 
-# Synthetic dataset 
+This repo generates a synthetic (fake!) dataset of voltage traces using data extracted from [Cryo-EM structure of the insect olfactory receptor Orco](https://www.nature.com/articles/s41586-018-0420-8/figures/7) by Butterwick et al., 2018.
 
-This subrepo generates a synthetic (fake!) dataset of voltage traces using data extracted from [Cryo-EM structure of the insect olfactory receptor Orco](https://www.nature.com/articles/s41586-018-0420-8/figures/7) by Butterwick et al., 2018.
-
-To understand the steps of generating the dataset, look at the [jupyter notebook](https://github.com/unibe-cns/SYNCH_theory/blob/main/synth_dataset/dataset_explanation.ipynb).
+To understand the steps of generating the dataset, look at the [jupyter notebook](https://github.com/kma-code/SYNCH_perspective/blob/main/dataset_explanation.ipynb).
 
 The actual dataloaders are generated using the following scripts:
 
-## Defining a parameter file
+### Defining a parameter file
 
 You need to define a parameter file containing the following items.
-A template can be found in [saved_datasets/dataset_template.json](https://github.com/unibe-cns/SYNCH_theory/blob/main/synth_dataset/saved_datasets/dataset_template.json).
+A template can be found in [saved_datasets/dataset_template.json](https://github.com/kma-code/SYNCH_perspective/blob/main/saved_datasets/dataset_template.json).
 
 - `odorant_names`: list of odorants. To see all available odors, run `python odor_space_analysis.py --list`. Include the `none` odor for better results, see paper.
 - `N_OR`: number of receptors to be reconstituted
@@ -38,12 +36,12 @@ A template can be found in [saved_datasets/dataset_template.json](https://github
 - `data_steps`: how many of `total_steps` should be 
 - `dataset_size`: how many traces to generate per odorant
 
-## Odor space analysis
+### Odor space analysis
 
 To perform the analysis, run `python odor_space_analysis.py --params 'saved_datasets/dataset_template.json'`, using your parameter file.
 The selected OR types will be saved back into the parameter file.
 
-## Generating a dataset
+### Generating a dataset
 
 To generate a dataset, run `python generate_dataset.py --params 'saved_datasets/dataset_template.json'` **after** running `odor_space_analysis.py`.
 Simulation parameters will be saved back into the parameter file.
@@ -60,7 +58,7 @@ with open('saved_datasets/dataset_template.json') as f:
     dataset_dict = json.load(f)
 ```
 
-## Running the classifier
+### Running the classifier
 
 TBW
 
