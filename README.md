@@ -6,7 +6,7 @@ This repository contains scripts and data to reproduce Figures 4,5,6 in _Synthet
 
 Clone all contents of this folder, cd into it, make new python environment and activate:
 ```
-git clone github.com/kma-code/SYNCH_perspective
+git clone https://github.com/kma-code/SYNCH_perspective.git
 cd SYNCH_perspective
 python3 -m venv SYNCHenv
 source SYNCHenv/bin/activate
