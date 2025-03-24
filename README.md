@@ -1,0 +1,71 @@
+# Odor space analysis, synthetic ORN dataset, and odor classification
+
+This repository contains scripts and data to reproduce Figures 4,5,6 in ``Synthetic Biology Meets Neuromorphic Computing: Towards a Bio-Inspired Olfactory Perception System'' by Max, Sames, Ye, Steinkühler, and Corradi (2025).
+
+
+## Installation
+
+Clone all contents of this folder, cd into it.
+
+Make new python environment and activate:
+```
+python3 -m venv SYNCHenv
+source SYNCHenv/bin/activate
+pip3 install -r requirements.txt
+python -m ipykernel install --user --name=SYNCHenv 
+```
+
+
+# Synthetic dataset 
+
+This subrepo generates a synthetic (fake!) dataset of voltage traces using data extracted from [Cryo-EM structure of the insect olfactory receptor Orco](https://www.nature.com/articles/s41586-018-0420-8/figures/7) by Butterwick et al., 2018.
+
+To understand the steps of generating the dataset, look at the [jupyter notebook](https://github.com/unibe-cns/SYNCH_theory/blob/main/synth_dataset/dataset_explanation.ipynb).
+
+The actual dataloaders are generated using the following scripts:
+
+## Defining a parameter file
+
+You need to define a parameter file containing the following items.
+A template can be found in [saved_datasets/dataset_template.json](https://github.com/unibe-cns/SYNCH_theory/blob/main/synth_dataset/saved_datasets/dataset_template.json).
+
+- `odorant_names`: list of odorants. To see all available odors, run `python odor_space_analysis.py --list`. Include the `none` odor for better results, see paper.
+- `N_OR`: number of receptors to be reconstituted
+- `N_ORCOs`: how many Orcos to simulate per ORN
+- `output`: `voltage` or `mean`, i.e. whether a trace should be generated or only the mean voltage
+- `output_dt`: e.g. `0.005`, how big one time step (in seconds) in the generated traces should be
+- `total_steps`: how many steps to simulate per trace
+- `data_steps`: how many of `total_steps` should be 
+- `dataset_size`: how many traces to generate per odorant
+
+## Odor space analysis
+
+To perform the analysis, run `python odor_space_analysis.py --params 'saved_datasets/dataset_template.json'`, using your parameter file.
+The selected OR types will be saved back into the parameter file.
+
+## Generating a dataset
+
+To generate a dataset, run `python generate_dataset.py --params 'saved_datasets/dataset_template.json'` **after** running `odor_space_analysis.py`.
+Simulation parameters will be saved back into the parameter file.
+
+The dataset will be saved in `saved_datasets` as `.pkl` files. To import, use:
+```
+import dill
+import json
+# load dataset
+with open('saved_datasets/dataset_size1_Nodor3_NOR7_voltage.pkl', 'rb') as f:
+    dataset = dill.load(f)
+# load corresponding dict
+with open('saved_datasets/dataset_template.json') as f:
+    dataset_dict = json.load(f)
+```
+
+## Running the classifier
+
+TBW
+
+After generating the dataset, run the classifier: `python run_classifier.py --dataset saved_datasets/dataset.pkl`
+
+This will start multiple processes with different seeds and generate a figure `training_results.png`.
+
+Network parameters can be changed in `run_classifier.py`.
