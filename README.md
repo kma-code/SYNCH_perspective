@@ -60,10 +60,4 @@ with open('saved_datasets/dataset_template.json') as f:
 
 ### Running the classifier
 
-TBW
-
-After generating the dataset, run the classifier: `python run_classifier.py --dataset saved_datasets/dataset.pkl`
-
-This will start multiple processes with different seeds and generate a figure `training_results.png`.
-
-Network parameters can be changed in `run_classifier.py`.
+To run the classification, check out the [jupyter notebook](https://github.com/kma-code/SYNCH_perspective/blob/main/SNN_classification.ipynb).
