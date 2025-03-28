@@ -25,7 +25,7 @@ The actual dataloaders are generated using the following scripts:
 ### Defining a parameter file
 
 You need to define a parameter file containing the following items.
-A template can be found in [saved_datasets/dataset_template.json](https://github.com/kma-code/SYNCH_perspective/blob/main/saved_datasets/dataset_template.json).
+A template can be found in [saved_datasets/dataset_template.json](https://github.com/kma-code/SYNCH_perspective/blob/main/saved_datasets/dataset_template.json) (make sure that you activate SYNCHenv).
 
 - `odorant_names`: list of odorants. To see all available odors, run `python odor_space_analysis.py --list`. Include the `none` odor for better results, see paper.
 - `N_OR`: number of receptors to be reconstituted
@@ -40,6 +40,8 @@ A template can be found in [saved_datasets/dataset_template.json](https://github
 
 To perform the analysis, run `python odor_space_analysis.py --params 'saved_datasets/dataset_template.json'`, using your parameter file.
 The selected OR types will be saved back into the parameter file.
+
+To see some examples, see the [jupyter notebook](https://github.com/kma-code/SYNCH_perspective/blob/main/odor_space_analysis.ipynb) (make sure that you activate SYNCHenv).
 
 ### Generating a dataset
 
@@ -60,4 +62,4 @@ with open('saved_datasets/dataset_template.json') as f:
 
 ### Running the classifier
 
-To run the classification, check out the [jupyter notebook](https://github.com/kma-code/SYNCH_perspective/blob/main/SNN_classification.ipynb).
+To run the classification, check out the [jupyter notebook](https://github.com/kma-code/SYNCH_perspective/blob/main/SNN_classification.ipynb) (make sure that you activate SYNCHenv).
