@@ -1,0 +1,15 @@
+{
+  "odorant_names": [
+    "none",
+    "methanol",
+    "propyl acetate",
+    "gamma-butyrolactone"
+  ],
+  "N_OR": 7,
+  "N_ORCOs": 10,
+  "output": "voltage",
+  "output_dt": 0.005,
+  "total_steps": 200000,
+  "data_steps": 180000,
+  "dataset_size": 1
+}

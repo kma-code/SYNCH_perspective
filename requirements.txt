@@ -1,0 +1,16 @@
+# math & plotting
+numpy
+matplotlib
+pandas
+#pylab
+scipy
+Pyarrow
+
+# torch
+torch
+torchvision
+
+dill
+multiprocess
+plyer
+wandb

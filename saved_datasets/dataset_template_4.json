@@ -1,0 +1,48 @@
+{
+  "odorant_names": [
+    "none",
+    "methanol",
+    "benzyl alcohol",
+    "2,3-butanediol"
+  ],
+  "N_OR": 3,
+  "N_ORCOs": 10,
+  "output": "voltage",
+  "output_dt": 0.005,
+  "total_steps": 10000,
+  "data_steps": 8000,
+  "dataset_size": 50,
+  "odorant_idx": [
+    693,
+    131,
+    97,
+    149
+  ],
+  "OR_idx": [
+    3,
+    33,
+    46
+  ],
+  "OR_names": [
+    "Or9a",
+    "Or67b",
+    "Or92a"
+  ],
+  "dt": 5e-05,
+  "N_odorants": 4,
+  "k_on": 0.0071,
+  "k_off": 0.0966,
+  "noise_mu": 0.0,
+  "noise_sigma": 0.5,
+  "noise_cutoff": 10.0,
+  "noise_fs": 100.0,
+  "conv_open_mean": -1.5,
+  "conv_open_stdev": 0.6,
+  "conv_closed_mean": 0.0,
+  "conv_closed_stdev": 0.3,
+  "R_gap": 63700000.0,
+  "C_dl": 8.99e-11,
+  "R_t": 792000000.0,
+  "tau": 0.0712008,
+  "pico_conversion_factor": 1e-12
+}

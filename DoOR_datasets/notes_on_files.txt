@@ -1,0 +1,8 @@
+All data here comes from DoOR 2.0.1.
+
+- we use "receptor_responses_onlyOR.csv" in our analysis, together with "receptor_labels_onlyOR.txt" and "odorant_labels.txt"
+- "or.csv" (e.g. ab2B.csv) are the responses taken directly from the ref papers
+- "door_response_matrix.csv" are responses normalized over all ORs/odorants
+- "door_response_matrix_non_normalized.csv" are responses normalized only over subgroup (which one?)
+- odor "SFR" is the spontaneous firing rate, which DoOR uses to normalize different datasets
+- odor "none" is just a row with all responses set to zero
