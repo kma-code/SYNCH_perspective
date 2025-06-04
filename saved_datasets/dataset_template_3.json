@@ -1,6 +1,6 @@
 {
   "odorant_names": [
-    "none",
+    "SFR",
     "methanol",
     "propyl acetate",
     "gamma-butyrolactone"
@@ -11,7 +11,7 @@
   "output_dt": 0.005,
   "total_steps": 10000,
   "data_steps": 8000,
-  "dataset_size": 50,
+  "dataset_size": 100,
   "odorant_idx": [
     693,
     131,
