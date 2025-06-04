@@ -1,6 +1,10 @@
+[![DOI](https://zenodo.org/badge/953810934.svg)](https://doi.org/10.5281/zenodo.15110986)
+
 # Odor space analysis, synthetic ORN dataset, and odor classification
 
 This repository contains scripts and data to reproduce Figures 4,5,6 in _Synthetic Biology Meets Neuromorphic Computing: Towards a Bio-Inspired Olfactory Perception System_ by Max, Sames, Ye, Steinkühler, and Corradi (2025).
+
+Electrophysiological recordings in `20170717_cell4.csv` from [Cryo-EM structure of the insect olfactory receptor Orco](https://www.nature.com/articles/s41586-018-0420-8), Butterwick et al. 2018, provided by Josefina del Mármol.
 
 ## Installation
 
