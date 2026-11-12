@@ -5,6 +5,7 @@ pandas==2.2.3
 #pylab
 scipy==1.15.2
 Pyarrow
+ipykernel==6.29.1
 
 # torch
 torch==2.2.0
