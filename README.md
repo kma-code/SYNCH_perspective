@@ -12,7 +12,7 @@ Clone all contents of this folder, cd into it, make new python environment and a
 ```
 git clone https://github.com/kma-code/SYNCH_perspective.git
 cd SYNCH_perspective
-python3 -m venv SYNCHenv
+python3.11 -m venv SYNCHenv
 source SYNCHenv/bin/activate
 pip3 install -r requirements.txt
 python -m ipykernel install --user --name=SYNCHenv 
