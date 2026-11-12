@@ -1,16 +1,16 @@
 # math & plotting
-numpy
-matplotlib
-pandas
+numpy==1.26.4
+matplotlib==3.8.2
+pandas==2.2.3
 #pylab
-scipy
+scipy==1.15.2
 Pyarrow
 
 # torch
-torch
-torchvision
+torch==2.2.0
+torchvision==0.17.0
 
-dill
-multiprocess
+dill==0.3.8
+multiprocess==0.70.16
 plyer
-wandb
+wandb==0.19.8
