@@ -31,7 +31,7 @@ The actual dataloaders are generated using the following scripts:
 You need to define a parameter file containing the following items.
 A template can be found in [saved_datasets/dataset_template.json](https://github.com/kma-code/SYNCH_perspective/blob/main/saved_datasets/dataset_template.json) (make sure that you activate SYNCHenv).
 
-- `odorant_names`: list of odorants. To see all available odors, run `python odor_space_analysis.py --list`. Include the `none` odor for better results, see paper.
+- `odorant_names`: list of odorants. To see all available odors, run `python odor_space_analysis.py --list`. Include the `SFR` odor for better results, see paper.
 - `N_OR`: number of receptors to be reconstituted
 - `N_ORCOs`: how many Orcos to simulate per ORN
 - `output`: `voltage` or `mean`, i.e. whether a trace should be generated or only the mean voltage
